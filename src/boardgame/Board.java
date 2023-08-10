@@ -4,11 +4,11 @@ public class Board {
 	
 	private int rows;
 	private int colums;
-	private Piece[][] piece;
+	private Piece[][] pieces;
 	public Board(int rows, int colums) {
 		this.rows = rows;
 		this.colums = colums;
-		piece = new Piece[rows][colums];
+		pieces = new Piece[rows][colums];
 	}
 	public int getRows() {
 		return rows;
@@ -24,10 +24,15 @@ public class Board {
 	}
 	
 	public Piece piece(int row, int colum) {
-		return piece[row][colum];
+		return pieces[row][colum];
 	}
 	
 	public Piece piece(Position position) {
-		return piece[position.getRow()][position.getColum()];
+		return pieces[position.getRow()][position.getColum()];
+	}
+	
+	public void placePeie(Piece piece, Position position) {
+		pieces[position.getRow()][position.getColum()] = piece;
+		piece.position = position;
 	}
 }
