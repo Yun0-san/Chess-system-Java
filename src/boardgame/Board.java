@@ -1,5 +1,33 @@
 package boardgame;
 
 public class Board {
-
+	
+	private int rows;
+	private int colums;
+	private Piece[][] piece;
+	public Board(int rows, int colums) {
+		this.rows = rows;
+		this.colums = colums;
+		piece = new Piece[rows][colums];
+	}
+	public int getRows() {
+		return rows;
+	}
+	public void setRows(int rows) {
+		this.rows = rows;
+	}
+	public int getColums() {
+		return colums;
+	}
+	public void setColums(int colums) {
+		this.colums = colums;
+	}
+	
+	public Piece piece(int row, int colum) {
+		return piece[row][colum];
+	}
+	
+	public Piece piece(Position position) {
+		return piece[position.getRow()][position.getColum()];
+	}
 }
